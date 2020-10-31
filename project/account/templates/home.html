@@ -1,0 +1,10 @@
+<h2>Edutech Website</h2>
+
+{% if user.is_authenticated %}
+  <p>Hi {{user.full_name }}, Welcome to Website !!</p>
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in,please try again !</p>
+  <a href="{% url 'login' %}">Log In</a> /
+  <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
